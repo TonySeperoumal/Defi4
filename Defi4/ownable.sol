@@ -1,3 +1,6 @@
+pragma solidity 0.5.11;
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/GSN/Context.sol";
+
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
