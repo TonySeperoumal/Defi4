@@ -1,6 +1,6 @@
 pragma solidity ^0.5.11;
 
-import "./factory.sol";
+import "./planefactory.sol";
 
 contract PlaneHelper{
     uint levelUpFee = 0.001 ether;
@@ -19,15 +19,15 @@ contract PlaneHelper{
   }
 
   function levelUp(uint _planeId) external payable {
-    require(msg.value == levelUpFee,"Vous n'avez pas assez de wei");
-    planes[_planeId].level++;
+    require(msg.value == levelUpFee,"Vous n'avez pas assez de fee");
+    planes[_planeId].level = planes[_planeId].level.add(1);
   }
 
   function changeName(uint _planeId, string _newName) external aboveLevel(2, _planeId) ownerOf(_planeId) {
     planes[_planeId].name = _newName;
   }
 
-  function changeModel(uint _planeId, uint _newModel) external aboveLevel(20, _planeId) ownerOf(_planeId) {
+  function changeModel(uint _planeId, uint _newModel) external aboveLevel(10, _planeId) ownerOf(_planeId) {
     planes[_planeId].model = _newModel;
   }
 
