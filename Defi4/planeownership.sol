@@ -36,7 +36,7 @@ contract PlaneOwnership is planeattack, ERC721 {
   }
 
   function takeOwnership(uint256 _tokenId) public {
-    require(planeApprovals[_tokenId] == msg.sender);
+    require(planeApprovals[_tokenId] == msg.sender,"Vous n'etes pas approuvé pour ce transfert !");
     address owner = ownerOf(_tokenId);
     _transfer(owner, msg.sender, _tokenId);
   }

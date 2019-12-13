@@ -18,6 +18,7 @@ contract PlaneFactory is Ownable {
     string name;
     uint model;//model
     uint16 level;
+    uint32 readyTimeFuel;
     uint16 fightwinCount;//fightWinCount
     uint16 fightlossCount;//fightLossCount
     uint16 fightCount;
@@ -29,7 +30,7 @@ contract PlaneFactory is Ownable {
   mapping (address => uint) ownerPlaneCount;
 
   function _createPlane(string _name, uint _model) internal {
-    uint id = planes.push(Plane(_name, _model,0,0,0,0)) - 1;
+    uint id = planes.push(Plane(_name, _model,0,uint32(now + cooldownTime),0,0,0)) - 1;
     planeToOwner[id] = msg.sender;
     ownerPlaneCount[msg.sender] = ownerPlaneCount[msg.sender].add(1);
     emit NewPlane(id, _name, _model);
