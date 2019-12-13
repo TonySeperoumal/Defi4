@@ -23,7 +23,7 @@ contract('ERC21', function(accounts) {
       });
 
       it("", async function() {
-        expect(await this.ERC21Instance.ownerOf.call(_tokenId)).to.be.bignumber.equal(new BN('0'))
+        expect(await this.ERC21Instance.ownerOf.call(tokenId)).to.be.bignumber.equal(new BN('0'))
       });
 
     }
