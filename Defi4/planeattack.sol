@@ -20,11 +20,14 @@ contract PlaneAttack{
       myPlane.winCount++;
       myPlane.level++;
       enemyPlane.lossCount++;
-      feedAndMultiply(_planeId, enemyPlane.model, "plane");
+      repairAndBuild(_planeId, enemyPlane.model, "plane");
     } else {
       myPlane.lossCount++;
       enemyPlane.winCount++;
       _triggerCooldown(myPlane);
     }
   }
+
+
+  
 }

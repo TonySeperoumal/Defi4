@@ -1,10 +1,5 @@
-const {
-  BN,
-  ether
-} = require('@openzeppelin/test-helpers');
-const {
-  expect
-} = require('chai');
+const {BN,ether} = require('@openzeppelin/test-helpers');
+const {expect} = require('chai');
 const ERC21 = artifacts.require('ERC21');
 
 contract('ERC21', function(accounts) {
@@ -27,3 +22,4 @@ contract('ERC21', function(accounts) {
       });
 
     }
+  

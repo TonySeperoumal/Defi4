@@ -19,7 +19,7 @@ contract PlaneHelper{
   }
 
   function levelUp(uint _planeId) external payable {
-    require(msg.value == levelUpFee,"Vous n'avez pas assez de fee");
+    require(msg.value == levelUpFee,"Vous n'avez pas assez de fée");
     planes[_planeId].level = planes[_planeId].level.add(1);
   }
 
