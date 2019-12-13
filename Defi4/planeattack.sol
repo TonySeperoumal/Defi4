@@ -20,7 +20,7 @@ contract PlaneAttack{
       myPlane.winCount++;
       myPlane.level++;
       enemyPlane.lossCount++;
-      feedAndMultiply(_planeId, enemyPlane.model, "zombie");
+      feedAndMultiply(_planeId, enemyPlane.model, "plane");
     } else {
       myPlane.lossCount++;
       enemyPlane.winCount++;
