@@ -12,5 +12,5 @@ contract(factory, function (account) {
 
   it("génère un avion", async function() {
     expect(await this.factoryInstance.createRandomPlane.call(owner).to.be.bignumber.equal(new BN('1')));
-  })
+  });
 })
