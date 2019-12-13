@@ -6,7 +6,7 @@ contract PlaneHelper{
     uint levelUpFee = 0.001 ether;
 
   modifier aboveLevel(uint _level, uint _planeId) {
-    require(planes[_planeId].level >= _level, "Votre niveau");
+    require(planes[_planeId].level >= _level, "Votre niveau n'est pas suffisant");
     _;
   }
 
