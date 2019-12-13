@@ -9,7 +9,7 @@ contract PlaneAttack{
 
   function randMod(uint _modulus) internal returns(uint) {
     randNonce++;
-    return uint(keccak256(block.timestamp, msg.sender, randNonce)) % _modulus;
+    return uint(keccak256(now, msg.sender, randNonce)) % _modulus;
   }
 
   function attack(uint _planeId, uint _targetId) external ownerOf(_planeId) {
@@ -20,14 +20,11 @@ contract PlaneAttack{
       myPlane.winCount++;
       myPlane.level++;
       enemyPlane.lossCount++;
-      repairAndBuild(_planeId, enemyPlane.model, "plane");
+      repairAndBuild(_planeId, enemyPlane.model);
     } else {
       myPlane.lossCount++;
       enemyPlane.winCount++;
       _triggerCooldown(myPlane);
     }
   }
-
-
-  
 }
